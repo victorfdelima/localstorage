@@ -26,19 +26,22 @@ export default function Home() {
     const client = window.google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: "https://www.googleapis.com/auth/analytics.readonly",
-      callback: (tokenResponse) => {
-        onSetToken(tokenResponse.access_token);
+      callback: (response) => {
+        
+        onSetToken(response.access_token, );
+    
       },
       
     },
+    
     );
     
     onInitClient(client);
   }, [onInitClient, onSetToken]);
 
 
+  const response = token
 
-    const response = token
 
     let expires = new Date()
     expires.setTime(expires.getTime() + (response * 1000))

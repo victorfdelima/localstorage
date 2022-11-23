@@ -18,7 +18,6 @@ export function useQueryReport() {
   const fetchData = useCallback(
     async (props) => {
       const {
-        token,
         viewID,
         startDate,
         endDate,
@@ -33,6 +32,7 @@ export function useQueryReport() {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
+            
           },
           body: JSON.stringify({
             reportRequests: [
@@ -72,7 +72,7 @@ export function useQueryReport() {
 
       return data;
     },
-    [token]
+    [localStorage.setItem('access_token', token)]
   );
 
   return { fetchData };

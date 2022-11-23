@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer, useMemo } from "react";
 
-const AuthContext = createContext(undefined);
+const AuthContext = createContext(() =>undefined);
 const AuthAPIContext = createContext(() => undefined);
 
 const reducer = (state, action) => {
